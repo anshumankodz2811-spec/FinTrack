@@ -15,7 +15,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://fin-track-hscorsnzo-anshuman-kodz.vercel.app"
+    ]
+}));
 app.use(express.json());
 
 // Routes

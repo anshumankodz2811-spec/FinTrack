@@ -1,0 +1,421 @@
+
+.goal-form-panel,
+.goal-list-panel {
+    margin-bottom: 24px;
+}
+
+.goal-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding-top: 20px;
+}
+
+.goal-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e8ecf3;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.goal-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.goal-title-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+}
+
+.goal-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #e0f8ec;
+    font-size: 20px;
+}
+
+.goal-title-wrap h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.goal-title-wrap p {
+    margin: 0;
+    color: #7a879b;
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.goal-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 7px;
+    margin-bottom: 14px;
+}
+
+.goal-amounts strong {
+    color: #138655;
+    font-size: 22px;
+}
+
+.goal-amounts > span {
+    color: #7a879b;
+    font-size: 12px;
+}
+
+.goal-amounts .goal-complete {
+    margin-left: auto;
+    color: #138655;
+    font-weight: 700;
+}
+
+.goal-progress-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+    color: #7a879b;
+    font-size: 11px;
+}
+
+.goal-deadline {
+    margin: 16px 0 0;
+    color: #7a879b;
+    font-size: 12px;
+}
+
+.goal-contribution-area {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #edf0f5;
+}
+
+.contribution-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.contribution-form input {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 12px;
+    border: 1px solid #dce2eb;
+    border-radius: 9px;
+    color: #172033;
+    background: #fbfcfe;
+    font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+    .goal-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .goal-card-header {
+        flex-direction: column;
+    }
+
+    .goal-amounts strong {
+        font-size: 19px;
+    }
+
+    .goal-progress-footer {
+        flex-direction: column;
+    }
+
+    .contribution-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .contribution-form input,
+    .contribution-form button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   FINTRACK — PREMIUM SAVINGS GOALS
+   ========================================= */
+
+/* Goal panels */
+.goal-form-panel,
+.goal-list-panel {
+    margin-bottom: 28px;
+    border-radius: 19px;
+    border-color: #e3eaf3;
+    box-shadow: 0 8px 26px rgba(26, 43, 70, 0.04);
+}
+
+/* Goal card grid */
+.goal-list {
+    gap: 20px;
+    padding-top: 24px;
+}
+
+.goal-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-width: 0;
+    padding: 23px;
+    border: 1px solid #e2e9f2;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 7px 24px rgba(26, 43, 70, 0.04);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.goal-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -65px;
+    right: -55px;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(39, 201, 139, 0.12),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.goal-card:hover {
+    transform: translateY(-3px);
+    border-color: #cfe8da;
+    box-shadow: 0 14px 32px rgba(26, 43, 70, 0.07);
+}
+
+/* Goal title and icon */
+.goal-card-header {
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.goal-title-wrap {
+    gap: 14px;
+}
+
+.goal-icon {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #d2f0df;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #e9fbf1, #d7f5e4);
+    color: #138655;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.goal-title-wrap h3 {
+    color: #19283d;
+    font-size: 16px;
+    font-weight: 750;
+    letter-spacing: -0.3px;
+    line-height: 1.45;
+}
+
+.goal-title-wrap p {
+    color: #7b899e;
+    line-height: 1.65;
+}
+
+/* Savings amounts */
+.goal-amounts {
+    gap: 9px;
+    margin-bottom: 17px;
+}
+
+.goal-amounts strong {
+    color: #138655;
+    font-size: clamp(21px, 2vw, 26px);
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.goal-amounts > span {
+    color: #8490a3;
+}
+
+.goal-amounts .goal-complete {
+    padding: 5px 9px;
+    border: 1px solid #c9eed9;
+    border-radius: 20px;
+    background: #effbf4;
+    color: #138655;
+    font-size: 11px;
+}
+
+/* Progress bar — works with the existing progress track */
+.goal-card .widget-progress-track,
+.goal-card .budget-progress-track {
+    height: 10px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #edf2f6;
+}
+
+.goal-card .widget-progress-fill,
+.goal-card .budget-progress-fill {
+    border-radius: inherit;
+    background: linear-gradient(90deg, #159966, #52d9a0);
+    transition: width 0.35s ease;
+}
+
+/* Goal progress information */
+.goal-progress-footer {
+    gap: 12px;
+    margin-top: 12px;
+    color: #7b899e;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.goal-deadline {
+    margin-top: 17px;
+    color: #77869b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Contribution section */
+.goal-contribution-area {
+    margin-top: 21px;
+    padding-top: 19px;
+    border-top: 1px solid #edf1f5;
+}
+
+.contribution-form {
+    gap: 10px;
+}
+
+.contribution-form input {
+    min-height: 42px;
+    padding: 11px 13px;
+    border: 1px solid #dce5ef;
+    border-radius: 10px;
+    background: #f9fbfd;
+    color: #19283d;
+    font-size: 13px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.contribution-form input:focus {
+    outline: none;
+    border-color: #159966;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(21, 153, 102, 0.09);
+}
+
+/* Keep contribution buttons aligned */
+.contribution-form button {
+    border-radius: 10px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contribution-form button:hover {
+    transform: translateY(-1px);
+}
+
+/* Keyboard accessibility */
+.contribution-form input:focus-visible,
+.goal-card button:focus-visible {
+    outline: 3px solid rgba(21, 153, 102, 0.2);
+    outline-offset: 2px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .goal-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .goal-card {
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .goal-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .goal-card {
+        padding: 19px;
+        border-radius: 16px;
+    }
+
+    .goal-card-header {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .goal-amounts strong {
+        font-size: 21px;
+    }
+
+    .goal-progress-footer {
+        flex-direction: row;
+    }
+
+    .contribution-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .contribution-form input,
+    .contribution-form button {
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .goal-card-header {
+        flex-direction: column;
+    }
+
+    .goal-progress-footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .goal-card,
+    .contribution-form input,
+    .contribution-form button {
+        transition: none;
+    }
+}

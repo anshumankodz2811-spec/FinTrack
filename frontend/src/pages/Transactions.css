@@ -1,0 +1,442 @@
+
+.transaction-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.transaction-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e8ecf3;
+    border-radius: 14px;
+}
+
+.transaction-stat-card span {
+    color: #7a879b;
+    font-size: 12px;
+}
+
+.transaction-stat-card strong {
+    font-size: 21px;
+    overflow-wrap: anywhere;
+}
+
+.form-panel,
+.all-transactions-panel {
+    margin-bottom: 24px;
+}
+
+.transaction-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding-top: 22px;
+}
+
+.transaction-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #536176;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-toolbar input,
+.transaction-toolbar select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid #dce2eb;
+    border-radius: 9px;
+    background: #fbfcfe;
+    color: #172033;
+    outline: none;
+    font-size: 13px;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus,
+.transaction-toolbar input:focus,
+.transaction-toolbar select:focus {
+    border-color: #159966;
+    box-shadow: 0 0 0 3px rgb(21 153 102 / 10%);
+}
+
+.full-field {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.secondary-button,
+.delete-button {
+    border: 1px solid #dce2eb;
+    border-radius: 8px;
+    padding: 9px 12px;
+    background: white;
+    color: #42516a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.secondary-button:hover {
+    background: #f1f5f9;
+}
+
+.delete-button {
+    border-color: #f5d1d3;
+    color: #c43e48;
+}
+
+.delete-button:hover {
+    background: #fff1f1;
+}
+
+.feedback-error,
+.feedback-success {
+    margin: 15px 0 0;
+    font-size: 13px;
+}
+
+.feedback-error {
+    color: #b42318;
+}
+
+.feedback-success {
+    color: #138655;
+}
+
+.results-count {
+    color: #7a879b;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.transaction-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 170px;
+    gap: 12px;
+    padding: 20px 0;
+}
+
+.transaction-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.transaction-actions button {
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .transaction-row {
+        grid-template-columns: 36px minmax(0, 1fr) auto;
+    }
+
+    .transaction-actions {
+        grid-column: 2 / -1;
+        justify-content: flex-end;
+    }
+
+    .transaction-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .transaction-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-form {
+        grid-template-columns: 1fr;
+    }
+
+    .full-field {
+        grid-column: auto;
+    }
+
+    .transaction-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-stat-card {
+        padding: 16px;
+    }
+
+    .transaction-stat-card strong {
+        font-size: 19px;
+    }
+}
+
+/* =========================================
+   FINTRACK — PREMIUM TRANSACTIONS REFINEMENT
+   ========================================= */
+
+/* Stats cards */
+.transaction-stats {
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.transaction-stat-card {
+    position: relative;
+    overflow: hidden;
+    padding: 23px;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid #e2e9f2;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(26, 43, 70, 0.045);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.transaction-stat-card::after {
+    content: "";
+    position: absolute;
+    top: -36px;
+    right: -36px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(39, 201, 139, 0.12),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.transaction-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 13px 30px rgba(26, 43, 70, 0.075);
+}
+
+.transaction-stat-card span {
+    color: #75839a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.transaction-stat-card strong {
+    color: #19283d;
+    font-size: clamp(19px, 2vw, 25px);
+    font-weight: 800;
+    letter-spacing: -0.6px;
+}
+
+/* Form and transaction panels */
+.form-panel,
+.all-transactions-panel {
+    border-radius: 19px;
+    box-shadow: 0 8px 26px rgba(26, 43, 70, 0.04);
+    border-color: #e3eaf3;
+}
+
+/* Transaction form */
+.transaction-form {
+    gap: 20px;
+    padding-top: 25px;
+}
+
+.transaction-form label {
+    color: #536176;
+    font-size: 12px;
+    font-weight: 650;
+    gap: 9px;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-toolbar input,
+.transaction-toolbar select {
+    min-height: 44px;
+    padding: 12px 14px;
+    border: 1px solid #dce4ee;
+    border-radius: 11px;
+    background: #f9fbfd;
+    color: #19283d;
+    font: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.transaction-form input:hover,
+.transaction-form select:hover,
+.transaction-toolbar input:hover,
+.transaction-toolbar select:hover {
+    border-color: #b8c9d9;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus,
+.transaction-toolbar input:focus,
+.transaction-toolbar select:focus {
+    border-color: #159966;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(21, 153, 102, 0.09);
+    outline: none;
+}
+
+/* Buttons */
+.secondary-button,
+.delete-button {
+    min-height: 38px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.secondary-button:hover,
+.delete-button:hover {
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    border-color: #dce5ef;
+    background: #f8fafc;
+    color: #42516a;
+}
+
+.secondary-button:hover {
+    border-color: #cbd7e5;
+    background: #edf3f8;
+}
+
+.delete-button {
+    border-color: #f3d2d5;
+    background: #fffafa;
+    color: #c43e48;
+}
+
+.delete-button:hover {
+    border-color: #eeb7bc;
+    background: #fff0f1;
+}
+
+/* Feedback messages */
+.feedback-error,
+.feedback-success {
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.feedback-error {
+    border: 1px solid #f5d4d0;
+    background: #fff5f3;
+    color: #b42318;
+}
+
+.feedback-success {
+    border: 1px solid #c9eed9;
+    background: #effbf4;
+    color: #138655;
+}
+
+/* Search and filters */
+.transaction-toolbar {
+    gap: 14px;
+    padding: 22px 0;
+}
+
+.transaction-toolbar input,
+.transaction-toolbar select {
+    box-sizing: border-box;
+}
+
+.results-count {
+    color: #7b899e;
+    font-weight: 500;
+}
+
+/* Transaction row refinements */
+.transaction-row {
+    transition: background 0.2s ease;
+}
+
+.transaction-row:hover {
+    background: rgba(241, 248, 245, 0.65);
+}
+
+.transaction-actions {
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Keyboard accessibility */
+.secondary-button:focus-visible,
+.delete-button:focus-visible,
+.transaction-form input:focus-visible,
+.transaction-form select:focus-visible,
+.transaction-toolbar input:focus-visible,
+.transaction-toolbar select:focus-visible {
+    outline: 3px solid rgba(21, 153, 102, 0.2);
+    outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .transaction-stats {
+        gap: 14px;
+    }
+
+    .transaction-stat-card {
+        padding: 19px;
+    }
+}
+
+@media (max-width: 600px) {
+    .transaction-stats {
+        gap: 12px;
+    }
+
+    .transaction-stat-card {
+        padding: 17px;
+        border-radius: 15px;
+    }
+
+    .transaction-form {
+        gap: 16px;
+        padding-top: 20px;
+    }
+
+    .transaction-toolbar {
+        gap: 10px;
+        padding: 17px 0;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+
+    .transaction-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .transaction-stat-card,
+    .secondary-button,
+    .delete-button,
+    .transaction-row {
+        transition: none;
+    }
+}

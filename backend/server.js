@@ -16,16 +16,17 @@ connectDB();
 
 // Middleware
 
+
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://fin-track-hscorsnzo-anshuman-kodz.vercel.app",
         "https://fin-track-six-gray.vercel.app",
         "https://fin-track-1jk5ij8gc-anshuman-kodz.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 app.use(express.json());
 
